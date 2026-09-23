@@ -1,0 +1,43 @@
+============================================================
+REVISIÓN Y PRUEBAS - PRÁCTICA DE HTML (CLASE 2)
+Estudiante: Matías Limina
+============================================================
+
+1. RESULTADO DE LAS PRUEBAS
+------------------------------------------------------------
+- Prueba de Cantidad de lugares:
+  * Valor 0: El navegador bloquea el envío indicando que el valor debe ser mayor o igual a 1 (min="1").
+  * Valor 4: El navegador bloquea el envío indicando que el valor debe ser menor o igual a 3 (max="3").
+  * Valor 1.5: El navegador bloquea el envío requiriendo un número entero válido (step="1").
+  * Valor 1 (por defecto), 2 o 3: Son aceptados correctamente.
+
+- Prueba de Código de comisión:
+  * Valor "AB": Se rechaza el envío porque no cumple con la restricción de exactamente 3 caracteres del patrón pattern="[A-Za-z]{3}".
+  * Valor "AB1": Se rechaza el envío debido a que incluye un número, violando el patrón de solo letras.
+  * Valor "ABC" o "abc": Es aceptado correctamente como válido al cumplir exactamente las 3 letras alfabéticas.
+
+- Prueba de Envío válido:
+  * Al ingresar todos los campos válidos (ej. nombre="Ana Perez", correo="ana@example.com", cantidad="2", codigo="ABC", comentario="Consulta"), el formulario se envía por método GET hacia jornada.html#inscripcion.
+  * Los parámetros y valores viajan visibles en la URL (Query String) y el navegador redirige correctamente a la sección #inscripcion.
+
+- Prueba de Navegación relativa:
+  * La navegación bidireccional jornada.html <-> contacto.html funciona correctamente mediante rutas relativas.
+  * Los enlaces internos por ancla (#presentacion, #horarios, #inscripcion, #inicio) se desplazan a las secciones correspondientes.
+  * El enlace de correo utiliza el protocolo mailto: y el enlace a UTN abre en una nueva pestaña (target="_blank" con rel="noopener noreferrer").
+
+
+2. RESPUESTAS A LAS PREGUNTAS
+------------------------------------------------------------
+• ¿Por qué elegiste un tipo de lista distinto para los materiales y para los pasos?
+Respuesta: 
+Para los materiales se utilizó una lista desordenada (<ul>) porque los elementos no requieren una secuencia o jerarquía cronológica estricta; el orden en que se listen no altera el significado. 
+En cambio, para los pasos de "Cómo participar" se utilizó una lista ordenada (<ol>) porque representan una secuencia temporal y procedimental de pasos sucesivos que deben cumplirse en un orden determinado.
+
+• ¿Qué diferencia hay entre el identificador de un campo y su nombre de envío?
+Respuesta: 
+El identificador (atributo 'id') es único en todo el documento HTML y se utiliza principalmente para asociar la etiqueta <label> con su control mediante el atributo 'for', además de permitir su referencia desde CSS o JavaScript. 
+El nombre de envío (atributo 'name') es el identificador que el navegador utiliza como clave al empaquetar y enviar los datos del formulario al servidor (o en la URL mediante el método GET en formato clave=valor). Sin el atributo 'name', el dato ingresado en el campo no se envía en el formulario.
+
+• ¿Qué celda tuviste que quitar al combinar las filas de la tabla y por qué?
+Respuesta: 
+Al combinar verticalmente las filas con el atributo 'rowspan="2"' en la celda del Bloque ("Mañana" y "Tarde"), esa celda pasa a ocupar el espacio de dos filas en la primera columna. Por lo tanto, en la segunda fila de cada bloque (las filas de las 10:00 y 15:00) se debió quitar la primera celda <td> correspondiente al Bloque para evitar que la fila quede con 5 columnas y rompa la alineación estructural de la tabla.

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornada Aprender Haciendo - Programación III</title>
+</head>
+<body>
+
+  <!-- Cabecera -->
+  <header id="inicio">
+    <h1>Jornada Aprender Haciendo</h1>
+    <p>Talleres de HTML — Programación III</p>
+    
+    <!-- Menú de navegación -->
+    <nav>
+      <ul>
+        <li><a href="#presentacion">Presentación</a></li>
+        <li><a href="#horarios">Horarios</a></li>
+        <li><a href="#inscripcion">Inscripción</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+
+    <!-- Sección Presentación -->
+    <section id="presentacion">
+      <h2>Presentación</h2>
+      <p>La jornada propone construir nuestras primeras páginas web con HTML. Vamos a aprender <em>haciendo</em>, mediante talleres de estructura, navegación y formularios.</p>
+      <p>Está dirigida a estudiantes que comienzan su formación en desarrollo frontend. No hace falta experiencia previa: trabajaremos con la teoría de clase y pondremos a prueba cada resultado.</p>
+      <p>Fecha: 23 de octubre de 2026. Lugar: Aula de Informática, Facultad Regional Mendoza (jornada ficticia).</p>
+      <p><strong>Cupos limitados: revisá los horarios antes de inscribirte.</strong> <mark>Actividad gratuita.</mark></p>
+
+      <img src="imagenes/talleres.svg" alt="Ilustración con monitores mostrando etiquetas HTML básicas" width="300">
+
+      <h3>Qué traer</h3>
+      <ul>
+        <li>Una computadora con navegador instalado.</li>
+        <li>Un editor de texto o de código.</li>
+        <li>El material teórico de HTML.</li>
+        <li>Un cuaderno para registrar dudas y pruebas.</li>
+      </ul>
+
+      <h3>Cómo participar</h3>
+      <ol>
+        <li>Consultar el cronograma de talleres.</li>
+        <li>Elegir el horario en el que querés asistir.</li>
+        <li>Completar la inscripción de prueba.</li>
+        <li>Presentarte con tus materiales diez minutos antes.</li>
+      </ol>
+
+      <aside>
+        <h3>Recomendaciones de asistencia</h3>
+        <p>El aula del ejemplo cuenta con acceso por rampa. Si necesitás alguna adaptación, consultá a la organización antes de la jornada.</p>
+      </aside>
+    </section>
+
+    <!-- Sección Horarios -->
+    <section id="horarios">
+      <h2>Horarios</h2>
+      <table border="1">
+        <caption>Cronograma de talleres</caption>
+        <thead>
+          <tr>
+            <th scope="col">Bloque</th>
+            <th scope="col">Horario</th>
+            <th scope="col">Taller</th>
+            <th scope="col">Cupos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">Mañana</td>
+            <td>09:00</td>
+            <td>Introducción a HTML</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>10:00</td>
+            <td>Formularios accesibles</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Tarde</td>
+            <td>14:00</td>
+            <td>Tablas y enlaces</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>15:00</td>
+            <td>Proyecto integrador</td>
+            <td>10</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total de cupos</td>
+            <td>60</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- Sección Inscripción -->
+    <section id="inscripcion">
+      <h2>Inscripción</h2>
+      <p>Usá datos ficticios. Esta demostración valida los campos en el navegador y no guarda inscripciones.</p>
+
+      <form action="jornada.html#inscripcion" method="get">
+        <fieldset>
+          <legend>Datos de inscripción</legend>
+
+          <p>
+            <label for="nombre">Nombre (obligatorio, de 3 a 40 caracteres):</label><br>
+            <input type="text" id="nombre" name="nombre" minlength="3" maxlength="40" placeholder="Ejemplo: Ana" required>
+          </p>
+
+          <p>
+            <label for="correo">Correo (obligatorio):</label><br>
+            <input type="email" id="correo" name="correo" placeholder="ana@example.com" required>
+          </p>
+
+          <p>
+            <label for="cantidad">Cantidad de lugares (de 1 a 3):</label><br>
+            <input type="number" id="cantidad" name="cantidad" min="1" max="3" step="1" value="1" required>
+          </p>
+
+          <p>
+            <label for="codigo">Código de comisión (exactamente 3 letras):</label><br>
+            <input type="text" id="codigo" name="codigo" pattern="[A-Za-z]{3}" placeholder="ABC" title="Tres letras de la A a la Z, sin números ni espacios" required>
+          </p>
+
+          <p>
+            <label for="comentario">Comentario (opcional, hasta 200 caracteres):</label><br>
+            <textarea id="comentario" name="comentario" rows="4" cols="50" maxlength="200" placeholder="Escribí aquí tu consulta o comentario..."></textarea>
+          </p>
+
+          <p>
+            <button type="submit">Enviar inscripción de prueba</button>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>Matías Limina — Práctica académica</p>
+    <p><small>Jornada, dirección y datos de contacto ficticios para una actividad de HTML.</small></p>
+    <p><a href="#inicio">Volver al inicio</a></p>
+  </footer>
+
+</body>
+</html>
