@@ -1,6 +1,134 @@
 @baseUrl = http://127.0.0.1:8000
 
 ### ==========================================
+### MÓDULO: PROVEEDORES
+### ==========================================
+
+### P-01. Crear proveedor (caso de éxito - esperado: 201)
+POST {{baseUrl}}/proveedores/
+Content-Type: application/json
+
+{
+  "codigo": "PROV-001",
+  "razon_social": "Distribuidora del Sur S.A.",
+  "cuit": "30712345678",
+  "email": "contacto@distribuidora-sur.com",
+  "telefono": "011-4567-8901",
+  "activo": true
+}
+
+### P-02. Crear segundo proveedor (caso de éxito - esperado: 201)
+POST {{baseUrl}}/proveedores/
+Content-Type: application/json
+
+{
+  "codigo": "PROV-002",
+  "razon_social": "Comercial Norte S.R.L.",
+  "cuit": "30712345679",
+  "email": "ventas@comercial-norte.com",
+  "telefono": "011-4567-8902",
+  "activo": true
+}
+
+### P-03. Listar proveedores con paginación (esperado: 200)
+GET {{baseUrl}}/proveedores/?skip=0&limit=1
+
+### P-04. Listar proveedores filtrando activos (esperado: 200)
+GET {{baseUrl}}/proveedores/?skip=0&limit=10&activo=true
+
+### P-05. Consultar proveedor por ID (caso de éxito - esperado: 200)
+GET {{baseUrl}}/proveedores/1
+
+### P-06. Actualizar proveedor (caso de éxito - esperado: 200)
+PUT {{baseUrl}}/proveedores/1
+Content-Type: application/json
+
+{
+  "codigo": "PROV-001",
+  "razon_social": "Distribuidora del Sur S.A. actualizada",
+  "cuit": "30712345678",
+  "email": "actualizado@distribuidora-sur.com",
+  "telefono": "011-4567-8903",
+  "activo": true
+}
+
+### P-07. Desactivar proveedor (caso de éxito - esperado: 200)
+PUT {{baseUrl}}/proveedores/1/desactivar
+
+### P-08. Listar proveedores inactivos con paginación (esperado: 200)
+GET {{baseUrl}}/proveedores/?skip=0&limit=10&activo=false
+
+### P-09. Consultar proveedor inexistente (esperado: 404)
+GET {{baseUrl}}/proveedores/999
+
+### P-10. Actualizar proveedor inexistente (esperado: 404)
+PUT {{baseUrl}}/proveedores/999
+Content-Type: application/json
+
+{
+  "codigo": "PROV-999",
+  "razon_social": "Proveedor inexistente",
+  "cuit": "30712345999",
+  "email": "no-existe@example.com",
+  "telefono": "011-0000-0000",
+  "activo": true
+}
+
+### P-11. Desactivar proveedor inexistente (esperado: 404)
+PUT {{baseUrl}}/proveedores/999/desactivar
+
+### P-12. Desactivar proveedor ya desactivado (esperado: 409)
+PUT {{baseUrl}}/proveedores/1/desactivar
+
+### P-13. Crear proveedor con código vacío (esperado: 422)
+POST {{baseUrl}}/proveedores/
+Content-Type: application/json
+
+{
+  "codigo": "",
+  "razon_social": "Proveedor inválido",
+  "cuit": "30712345680",
+  "email": "invalido@example.com",
+  "telefono": "011-0000-0001",
+  "activo": true
+}
+
+### P-14. Crear proveedor con razón social demasiado corta (esperado: 422)
+POST {{baseUrl}}/proveedores/
+Content-Type: application/json
+
+{
+  "codigo": "PROV-003",
+  "razon_social": "AB",
+  "cuit": "30712345681",
+  "email": "invalido@example.com",
+  "telefono": "011-0000-0002",
+  "activo": true
+}
+
+### P-15. Crear proveedor con datos faltantes (esperado: 422)
+POST {{baseUrl}}/proveedores/
+Content-Type: application/json
+
+{
+  "codigo": "PROV-004",
+  "cuit": "30712345682"
+}
+
+### P-16. Crear proveedor con código duplicado (esperado: 409 Conflict)
+POST {{baseUrl}}/proveedores/
+Content-Type: application/json
+
+{
+  "codigo": "PROV-001",
+  "razon_social": "Otra razón social válida",
+  "cuit": "30712345683",
+  "email": "duplicado@example.com",
+  "telefono": "011-0000-0003",
+  "activo": true
+}
+
+### ==========================================
 ### MÓDULO: CATEGORÍAS
 ### ==========================================
 
