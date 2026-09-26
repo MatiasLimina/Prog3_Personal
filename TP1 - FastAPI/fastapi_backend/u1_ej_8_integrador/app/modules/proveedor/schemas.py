@@ -1,10 +1,25 @@
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class ProveedorBase(BaseModel):
     """Campos compartidos por los esquemas de proveedores."""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "examples": [
+                {
+                    "codigo": "PROV-001",
+                    "razon_social": "Distribuidora del Sur S.A.",
+                    "cuit": "30712345678",
+                    "email": "contacto@distribuidora-sur.com",
+                    "telefono": "011-4567-8901",
+                    "activo": True,
+                }
+            ]
+        }
+    )
 
     codigo: str = Field(..., min_length=1)
     razon_social: str = Field(..., min_length=3)
@@ -28,6 +43,18 @@ class ProveedorRead(ProveedorBase):
 
 class ProveedorUpdate(BaseModel):
     """Campos opcionales para una actualización parcial."""
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "examples": [
+                {
+                    "email": "ventas@distribuidora-sur.com",
+                    "telefono": "011-4567-8902",
+                    "activo": True,
+                }
+            ]
+        }
+    )
 
     codigo: Optional[str] = Field(default=None, min_length=1)
     razon_social: Optional[str] = Field(default=None, min_length=3)
