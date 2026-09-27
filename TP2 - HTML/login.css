@@ -1,0 +1,167 @@
+/* ==========================================================================
+   Variables CSS (Definidas según la consigna)
+   ========================================================================== */
+:root {
+    --color-primario: #ff6347;
+    --color-fondo: #f0f0f0;
+    --color-texto: #333333;
+    --color-blanco: #ffffff;
+    --color-borde: #dddddd;
+    --color-focus: #ff4500;
+}
+
+/* ==========================================================================
+   Reset Moderno y Normalización del Box Model
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   Cuerpo y Centrado de la Página
+   ========================================================================== */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* ==========================================================================
+   Contenedor Principal (Tarjeta de Login) - Modelo de Caja
+   ========================================================================== */
+.login-container {
+    background-color: var(--color-blanco);
+    width: 100%;
+    max-width: 380px;
+    margin: auto;
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   Encabezados y Tipografía
+   ========================================================================== */
+.login-title {
+    color: var(--color-primario);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #666666;
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+}
+
+/* ==========================================================================
+   Formulario y Campos de Entrada
+   ========================================================================== */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.form-input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+    color: #9e9e9e;
+    font-size: 0.9rem;
+}
+
+/* Estado Focus interactivo y accesible */
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-focus);
+    box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.15);
+}
+
+/* Validación moderna no invasiva (Baseline) */
+.form-input:user-invalid {
+    border-color: #e53935;
+}
+
+/* ==========================================================================
+   Botón de Envío e Interacción :hover
+   ========================================================================== */
+.btn-submit {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: var(--color-focus);
+}
+
+.btn-submit:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   Enlace de Registro Inferior
+   ========================================================================== */
+.register-text {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #666666;
+}
+
+.register-link {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.register-link:hover {
+    color: var(--color-focus);
+    text-decoration: underline;
+}
