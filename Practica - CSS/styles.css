@@ -76,6 +76,7 @@ p {
 
 /* Modelo de caja y bloque BEM para .tarjeta */
 .tarjeta {
+  position: relative;
   background-color: var(--color-card-bg);
   border: 1px solid var(--color-mist);
   border-radius: 8px;
@@ -115,6 +116,29 @@ p {
   border: 2px solid var(--color-autumn);
   background-color: #fffaf8;
   box-shadow: 0 4px 14px rgba(118, 54, 38, 0.15);
+}
+
+/* ==========================================================================
+   Punto 6: Posición y Capas
+   - position: relative en la tarjeta contenedora
+   - position: absolute en la etiqueta "Nueva"
+   - Ajuste de z-index y capas
+   ========================================================================== */
+
+.tarjeta__etiqueta {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  background-color: var(--color-autumn);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(118, 54, 38, 0.3);
 }
 
 
