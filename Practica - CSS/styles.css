@@ -74,15 +74,49 @@ p {
   margin: 0 0 0.5rem 0;
 }
 
-/* Modelo de caja para .tarjeta */
+/* Modelo de caja y bloque BEM para .tarjeta */
 .tarjeta {
   background-color: var(--color-card-bg);
   border: 1px solid var(--color-mist);
   border-radius: 8px;
-  padding: 1.25rem;
-  margin-bottom: 1rem;
+  padding: 1.5rem 1.25rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 6px rgba(42, 49, 50, 0.05);
 }
+
+.tarjeta p {
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   Punto 3: BEM y Visualización
+   - Clases BEM: tarjeta, tarjeta__titulo, tarjeta__etiqueta, tarjeta--destacada
+   - Uso de display: inline-block en .tarjeta__enlace
+   - Modificador .tarjeta--destacada con diferenciación visual clara
+   ========================================================================== */
+
+.tarjeta__enlace {
+  display: inline-block;
+  color: var(--color-card-bg);
+  background-color: var(--color-stone);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-stone);
+}
+
+/* Modificador de tarjeta destacada */
+.tarjeta--destacada {
+  border: 2px solid var(--color-autumn);
+  background-color: #fffaf8;
+  box-shadow: 0 4px 14px rgba(118, 54, 38, 0.15);
+}
+
 
 /* ==========================================================================
    Punto 4: Flexbox y Grid
