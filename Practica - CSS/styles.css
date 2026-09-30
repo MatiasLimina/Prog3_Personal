@@ -242,5 +242,39 @@ p {
   }
 }
 
+/* ==========================================================================
+   Punto 8: Mini Experimento sobre .aviso
+   - display: none -> Elimina el elemento del layout (no ocupa espacio) y no es interactivo.
+   - visibility: hidden -> Oculta visualmente pero preserva el espacio en el layout; no es interactivo ni recibe foco Tab.
+   - opacity: 0 -> Vuelve transparente el elemento, preserva el espacio en el layout y CONSERVA la interactividad (recibe clicks y foco con Tab).
+   - Estado final de entrega: Totalmente visible y estilizado.
+   ========================================================================== */
+
+.aviso {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  background-color: rgba(144, 175, 197, 0.18);
+  border: 1px solid var(--color-mist);
+  border-left: 4px solid var(--color-stone);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--color-shadow);
+  margin-top: 2rem;
+}
+
+.aviso a {
+  color: var(--color-stone);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.aviso a:hover {
+  color: var(--color-autumn);
+}
+
+
 
 
